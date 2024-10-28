@@ -1,0 +1,536 @@
+/********** Template CSS **********/
+:root {
+    --primary: #5B8C51;
+    --secondary:#E63B33;
+    --light: #F7F7F7;
+    --dark: #000000;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    left: 30px; /* Changed from 'right' for RTL */
+    bottom: 30px;
+    z-index: 99;
+}
+
+.fw-bold {
+    font-weight: 700 !important;
+}
+
+.fw-medium {
+    font-weight: 600 !important;
+}
+
+.fw-semi-bold {
+    font-weight: 500 !important;
+}
+
+/*** Spinner ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+/*** Button ***/
+.btn {
+    transition: .5s;
+    font-weight: 500;
+}
+
+.btn-primary,
+.btn-outline-primary:hover {
+    color: var(--light);
+}
+
+.btn-secondary,
+.btn-outline-secondary:hover {
+    color: var(--dark);
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+}
+
+/*** Navbar ***/
+.navbar.sticky-top {
+    top: -100px;
+    transition: .5s;
+}
+
+.navbar .navbar-nav .nav-link {
+    margin-left: 35px; /* Changed from 'margin-right' for RTL */
+    padding: 25px 0;
+    color: var(--dark);
+    font-size: 18px;
+    font-weight: 500;
+    outline: none;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active {
+    color: var(--secondary);
+}
+
+.navbar .dropdown-toggle::after {
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    vertical-align: middle;
+    margin-right: 8px; /* Changed from 'margin-left' for RTL */
+}
+
+@media (max-width: 991.98px) {
+    .navbar .navbar-nav .nav-link  {
+        margin-left: 0; /* Changed from 'margin-right' for RTL */
+        padding: 10px 0;
+    }
+
+    .navbar .navbar-nav {
+        border-top: 1px solid #EEEEEE;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        border: none;
+        margin-top: 0;
+        top: 150%;
+        opacity: 0;
+        visibility: hidden;
+        transition: .5s;
+    }
+
+    .navbar .nav-item:hover .dropdown-menu {
+        top: 100%;
+        visibility: visible;
+        transition: .5s;
+        opacity: 1;
+    }
+}
+
+
+
+/*** Header ***/
+.carousel-caption {
+    top: 55%;
+    /* left: 0; This remains as is to stretch the full width */
+    /* right: 0; */
+    /* bottom: 0; */
+    /* left: 0; */
+
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, .1);
+    z-index: 1;
+
+}
+.discover{
+    color: var(--light);
+    background-color: var(--secondary);
+    font-size: 16px;
+    font-weight: 500;
+    /* margin-left: 10px; */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 15%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 3rem;
+    background-color: var(--secondary);
+    border: 10px solid var(--secondary);
+    color: #000000;
+
+    /* color: #000000; */
+}
+
+@media (max-width: 768px) {
+    #header-carousel .carousel-item {
+        position: relative;
+        min-height: 450px;
+    }
+    
+    #header-carousel .carousel-item img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.page-header {
+    background: url(../img/banner.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.page-header .breadcrumb-item+.breadcrumb-item::before {
+    color: var(--light);
+}
+
+.page-header .breadcrumb-item,
+.page-header .breadcrumb-item a {
+    font-size: 18px;
+    color: var(--light);
+}
+
+
+/*** Section Title ***/
+.section-title {
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.section-title::before {
+    position: absolute;
+    content: "";
+    width: calc(100% + 80px);
+    height: 2px;
+    top: 5px;
+    right: -40px; /* Adjusted for RTL */
+    background: var(--primary);
+    z-index: -1;
+}
+
+.section-title::after {
+    position: absolute;
+    content: "";
+    width: calc(100% + 120px);
+    height: 2px;
+    bottom: 6px;
+    right: -60px; /* Adjusted for RTL */
+    background: var(--primary);
+    z-index: -1;
+}
+
+.section-title.text-start::before {
+    width: calc(100% + 40px);
+    right: 0; /* Adjusted for RTL */
+}
+
+.section-title.text-start::after {
+    width: calc(100% + 60px);
+    right: 0; /* Adjusted for RTL */
+}
+
+
+/*** About ***/
+.about-experience {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: .5; 
+    /* bottom: -45px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/*** Service ***/
+.service-item {
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 0 45px rgba(0, 0, 0, .07);
+}
+
+.service-item .service-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.service-item .service-img img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.service-item .service-img::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .5);
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.service-item .service-img::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #FFFFFF;
+    transition: .5s ease-out;
+    z-index: 2;
+}
+
+.service-item:hover .service-img::after {
+    width: 0;
+    left: auto;
+    right: 0;
+}
+
+.service-item .service-text .service-icon {
+    width: 140px;
+    height: 140px;
+    padding: 15px;
+    margin-top: -70px;
+    margin-bottom: 40px;
+    background: #FFFFFF;
+    border-radius: 140px;
+    overflow: hidden;
+    box-shadow: 0 0 60px rgba(0, 0, 0, .1);
+}
+
+.service-item .service-text h5,
+.service-item .service-text p {
+    transition: .5s;
+}
+
+.service-item:hover .service-text h5,
+.service-item:hover .service-text p {
+    color: #FFFFFF;
+}
+
+.service-item .service-text .btn {
+    color: var(--secondary);
+    background: #FFFFFF;
+    box-shadow: 0 0 45px rgba(0, 0, 0, .25);
+}
+
+.service-item .service-text .btn:hover {
+    color: var(--dark);
+    background: var(--secondary);
+}
+
+
+/*** Product ***/
+.product-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 45px rgba(0, 0, 0, .07);
+}
+
+.product-item .product-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0; /* Keep this left for RTL, but consider margins if needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, .5);
+    opacity: 0;
+    padding-top: 60px;
+    transition: .5s;
+}
+
+.product-item:hover .product-overlay {
+    opacity: 1;
+    padding-top: 0;
+}
+
+/*** Team ***/
+.team-item {
+    position: relative;
+    text-align: center; /* Centered text is still applicable for RTL */
+    border-radius: 8px;
+    box-shadow: 0 0 45px rgba(0, 0, 0, .07);
+}
+
+.team-item .btn {
+    border-color: transparent;
+    box-shadow: 0 0 45px rgba(0, 0, 0, .2);
+}
+
+/* Additional adjustments for RTL */
+.text-start {
+    text-align: right; /* Align text to the right for RTL */
+}
+
+.text-end {
+    text-align: left; /* Align text to the left for RTL */
+}
+
+/* Optional: Adjust button positioning for RTL */
+.team-item .btn {
+    margin-left: 0; /* Reset margin to avoid unwanted spacing */
+    margin-right: 10px; /* Adjust right margin for RTL */
+}
+
+.team-item .btn:last-child {
+    margin-right: 0; /* Remove margin for the last button */
+}
+
+
+/*** Testimonial ***/
+.testimonial-img {
+    position: relative;
+    min-height: 400px;
+}
+
+.testimonial-img::after {
+    position: absolute;
+    content: "\f10d"; /* Adjust if needed */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 200px;
+    color: #EEEEEE;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.testimonial-img img {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+}
+
+.testimonial-img img:nth-child(1) {
+    top: 0;
+    right: 0; /* Change left to right for RTL */
+}
+
+.testimonial-img img:nth-child(2) {
+    top: 60%;
+    right: 20%; /* Change left to right for RTL */
+}
+
+.testimonial-img img:nth-child(3) {
+    top: 20%;
+    right: 60%; /* Change left to right for RTL */
+}
+
+.testimonial-img img:nth-child(4) {
+    bottom: 0;
+    left: 0; /* Change right to left for RTL */
+}
+
+.testimonial-img img.animated.pulse {
+    animation-duration: 2s;
+}
+
+.testimonial-carousel .owl-item img {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+}
+
+.testimonial-carousel .owl-nav {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row-reverse; /* Arrange nav buttons for RTL */
+}
+
+.testimonial-carousel .owl-nav .owl-prev,
+.testimonial-carousel .owl-nav .owl-next {
+    margin-left: 15px; /* Change margin-right to margin-left for RTL */
+    margin-right: 0; /* Remove right margin */
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary);
+    border-radius: 45px;
+    box-shadow: 0 0 45px rgba(0, 0, 0, .2);
+    font-size: 22px;
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-nav .owl-prev:hover,
+.testimonial-carousel .owl-nav .owl-next:hover {
+    background: var(--secondary);
+    color: var(--dark);
+}
+
+
+/*** Footer ***/
+.footer {
+    color: #B0B9AE;
+}
+
+.footer .btn.btn-link {
+    display: block;
+    margin-bottom: 5px;
+    padding: 0;
+    text-align: right; /* Change to right for RTL */
+    color: #B0B9AE;
+    font-weight: normal;
+    text-transform: capitalize;
+    transition: .3s;
+}
+
+.footer .btn.btn-link::before {
+    position: relative;
+    content: "\f105"; /* Adjust icon if needed */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-left: 10px; /* Change margin-right to margin-left for RTL */
+    margin-right: 0; /* Remove right margin */
+}
+
+.footer .btn.btn-link:hover {
+    color: var(--light);
+    letter-spacing: 1px;
+    box-shadow: none;
+}
