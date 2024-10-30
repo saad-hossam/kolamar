@@ -9,8 +9,8 @@
 .back-to-top {
     position: fixed;
     display: none;
-    left: 30px; /* Changed from 'right' for RTL */
-    bottom: 30px;
+    right: 30px; /* Changed from 'right' for RTL */
+    bottom: 70px;
     z-index: 99;
 }
 
@@ -533,4 +533,27 @@
     color: var(--light);
     letter-spacing: 1px;
     box-shadow: none;
+}
+/************* */
+
+ /************** left popup whats and popup form *****************/   
+
+/*-------------------------*/
+
+.whatsapp-ico{
+    fill: white;
+    width: 50px;
+    height: 50px;
+    padding: 3px;
+    background-color: #4dc247;
+    border-radius: 50%;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+    position: fixed;
+    bottom: 70px;
+    left : 20px;
+    z-index: 10;
+}
+
+.whatsapp-ico:hover{
+    box-shadow: 2px 2px 11px rgba(0,0,0,0.7);
 }
