@@ -88,7 +88,7 @@
 }
 
 .navbar .navbar-nav .nav-link {
-    margin-left: 35px; /* Changed from 'margin-right' for RTL */
+    margin-left: 35px; 
     padding: 25px 0;
     color: var(--dark);
     font-size: 18px;
@@ -107,12 +107,12 @@
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     vertical-align: middle;
-    margin-right: 8px; /* Changed from 'margin-left' for RTL */
+    margin-right: 8px; 
 }
 
 @media (max-width: 991.98px) {
     .navbar .navbar-nav .nav-link  {
-        margin-left: 0; /* Changed from 'margin-right' for RTL */
+        margin-left: 0; 
         padding: 10px 0;
     }
 
@@ -141,11 +141,18 @@
 }
 
 
+
 .discover{
     background-color: var(--secondary);
     color: var(--light);
-    /* padding: 30px 0; */
     text-align: center;
+    font-size: 16px;
+    font-weight: 900;
+    transition:.5s;
+}
+.discover1{
+    background-color: var(--secondary);
+    color: var(--light);
     font-size: 16px;
     font-weight: 900;
     transition:.5s;
